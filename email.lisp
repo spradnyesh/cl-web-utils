@@ -1,4 +1,4 @@
-(in-package :hawksbill.utils)
+(in-package :web-utils)
 
 (defmacro sendmail (&key to subject cc bcc attachments body package error-handle)
   (declare (ignore package))

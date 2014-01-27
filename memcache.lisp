@@ -1,4 +1,4 @@
-(in-package :hawksbill.utils)
+(in-package :web-utils)
 
 #- (and)
 ((defun memcache-connect ()

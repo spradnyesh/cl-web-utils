@@ -1,4 +1,4 @@
-(in-package :hawksbill.utils)
+(in-package :web-utils)
 
 (defun normalize-file-name (file-name)
   ;; strip directory info sent by Windows browsers

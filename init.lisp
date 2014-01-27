@@ -1,4 +1,4 @@
-(in-package :hawksbill.utils)
+(in-package :web-utils)
 
 (defgeneric model-init (dimension)
   (:documentation "dummy function so that the below macro will work correctly"))

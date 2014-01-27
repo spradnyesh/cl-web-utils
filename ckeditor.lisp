@@ -1,4 +1,4 @@
-(in-package :hawksbill.utils)
+(in-package :web-utils)
 
 (defmacro ck-js (lang)
   `(fmtnil (<:script :type "text/javascript"

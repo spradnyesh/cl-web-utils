@@ -1,4 +1,4 @@
-(in-package :hawksbill.utils)
+(in-package :web-utils)
 
 ;;;; this file defines the actual config data that needs to be looked up based on dimensions stored in *request*
 

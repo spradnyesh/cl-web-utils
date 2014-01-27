@@ -1,4 +1,4 @@
-(in-package :hawksbill.utils)
+(in-package :web-utils)
 
 (defun prettyprint-date (&optional (timestamp (now)))
   (format-timestring nil timestamp :format '(:short-weekday ", " :short-month " " :day " " :year)))

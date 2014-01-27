@@ -1,4 +1,4 @@
-(in-package :hawksbill.utils)
+(in-package :web-utils)
 
 (defun obfuscate-js ()
   (setf *ps-print-pretty* (not (get-config "parenscript.obfuscation"))))

@@ -1,4 +1,4 @@
-(in-package :hawksbill.utils)
+(in-package :web-utils)
 
 (defun generate-salt (&optional (length 32))
   (get-random-string length :alphabetic t :numeric t))

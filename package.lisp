@@ -1,4 +1,4 @@
-(defpackage :hawksbill.utils
+(defpackage :web-utils
   (:use :cl :sexml :cl-memcached :cl-ppcre :parenscript :restas :split-sequence :hunchentoot :cl-prevalence :cl-gd :ironclad :local-time :flexi-streams :trivial-utf-8 :cl-smtp :json :trivial-timeout :eager-future2 :cl-cron)
   (:shadow :mime-type :size :prototype)
   (:shadowing-import-from :restas :redirect :start)
@@ -133,7 +133,7 @@
            ;; cron
            :cron-restart))
 
-(in-package :hawksbill.utils)
+(in-package :web-utils)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; global configs for use in this package
