@@ -1,0 +1,14 @@
+#+FILETAGS: :web-utils:
+
+* backlog
+** move common functionality (including (partial) views)
+   - [ ] login
+** TODO write tests
+   :CLOCK:
+   CLOCK: [2014-01-27 Mon 13:52]--[2014-01-27 Mon 14:13] =>  0:21
+   :END:
+** [refactor] utils/list/make-set
+   - rename to remove-duplicates
+   - why is it needed in model/article/get-active-articles (the original list already does not contain duplicates)
+   - and other places too? ???
+** replace utils/locale w/ cl-locale
