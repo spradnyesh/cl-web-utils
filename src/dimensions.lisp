@@ -47,7 +47,7 @@
 
 (defun get-dimension-value (dim-name)
   (if (boundp '*request*)
-      (funcall (intern (string-upcase dim-name) :hawksbill.utils) (dimensions *request*))
+      (funcall (intern (string-upcase dim-name) :web-utils) (dimensions *request*))
       (find-dimension-value dim-name)))
 
 (defun dim-to-dim-str (dim)
