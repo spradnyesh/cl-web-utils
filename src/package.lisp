@@ -75,7 +75,6 @@
            :insert-at
            :splice
            :get-random-from-list
-           :subset
            :print-map
            :push-map
            :make-set
