@@ -38,8 +38,8 @@
 (defun get-random-from-list (list)
   (nth (random (length list)) list))
 
-(defun group-list (fn list)
-  (let ((ht (make-hash-table :test 'equal))
+(defun group-list (fn list &key test 'equal)
+  (let ((ht (make-hash-table :test (or test 'equal)))
         (key nil)
         (ele nil)
         (rslt nil))
