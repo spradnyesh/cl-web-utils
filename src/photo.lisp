@@ -76,6 +76,7 @@
                           0 0 0 0
                           o-width o-height
                           :resize t
+                          :resample t
                           :dest-width n-width
                           :dest-height n-height)
               (write-image-to-file n-filename
