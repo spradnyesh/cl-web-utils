@@ -56,13 +56,13 @@
   "build URLs b/n route?p=low and route?p=high"
   `(let* ((max-pages (floor (/ (1- ,max-results) ,num-per-page)))
           (low-high (pagination-combine-low-high ,page-number max-pages ,num-pages)))
-     (fmtnil
+     (<:div :class "pagination"
       ;; do NOT show pagination-markup
       ;; when page-number = 13, *article-num-per-page* = 10 and max-results = 100 ;)
       ;; OR when max-results < 10
       (when (and (<= ,page-number max-pages)
                  (> ,max-results ,num-per-page))
-        (<:ol :class "pagination"
+        (<:ol
               (if (= ,page-number 0)
                   (<:li :class "disabled" "first")
                   (<:li (<:a :href (h-genurl ,route ,@route-params :page 0) "first")))
@@ -87,4 +87,4 @@
               (if (= ,page-number max-pages)
                   (<:li :class "disabled" "last")
                   (<:li (<:a :href (h-genurl ,route ,@route-params :page max-pages) "last")))))
-      (<:span :class "pagination-results small" (format nil "~a results" ,max-results)))))
+      (<:p :class "pagination-results small" (format nil "~a results" ,max-results)))))
