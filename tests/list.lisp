@@ -56,3 +56,58 @@
              (equal (gethash 1 b) '((1 4) (1 3) (1 2)))
              (equal (gethash 2 b) '((2 3) (2 1)))
              (equal (gethash 3 b) '((3 2) (3 1)))))))
+
+;; append-nil
+(test append-nil
+  (is (equal '((1.1 1.2 nil) (2.1 2.2 nil))
+             (web-utils::append-nil '((1.1 1.2) (2.1 2.2))))))
+
+;; range
+(test range-1
+  (is (equal '(0 1 2 3)
+             (range 4))))
+(test range-2
+  (is (equal '(1 2 3)
+             (range 1 4))))
+(test range-3
+  (is (equal '(1 1.5 2.0 2.5 3.0 3.5)
+             (range 1 4 0.5))))
+
+;; permutations and combinations
+(test combinations
+  (is (equal '((3) (3 1) (3 2 1) (3 2) (2) (2 1) (1))
+             (web-utils::combinations-i '(1 2 3)))))
+
+(test permutations
+  (is (equal '((1 2 3) (1 3 2) (2 1 3) (2 3 1) (3 1 2) (3 2 1))
+             (web-utils::permutations '(1 2 3)))))
+
+(test permutations-i
+  (is (equal '((1) (2 1) (1 2) (2) (3 2) (2 3) (3 2 1) (3 1 2) (2 3 1) (2 1 3) (1 3 2)
+               (1 2 3) (3 1) (1 3) (3))
+             (web-utils::permutations-i '(1 2 3)))))
+
+(test cross-product-i
+  (is (equal '((2.1 3.3) (2.1 3.2) (2.1 3.1) (2.2 3.3) (2.2 3.2) (2.2 3.1) (3.3) (3.2) (3.1)
+ (1.2 2.1 3.3) (1.2 2.1 3.2) (1.2 2.1 3.1) (1.2 2.2 3.3) (1.2 2.2 3.2)
+ (1.2 2.2 3.1) (1.2 3.3) (1.2 3.2) (1.2 3.1) (1.1 2.1 3.3) (1.1 2.1 3.2)
+ (1.1 2.1 3.1) (1.1 2.2 3.3) (1.1 2.2 3.2) (1.1 2.2 3.1) (1.1 3.3) (1.1 3.2)
+ (1.1 3.1) (1.1) (1.1 2.2) (1.1 2.1) (1.2) (1.2 2.2) (1.2 2.1) (2.2) (2.1))
+             (web-utils::cross-product-i '((1.1 1.2) (2.1 2.2) (3.1 3.2 3.3))))))
+
+;; hashmap
+(test print-map
+  (let ((fstr (make-array '(0) :element-type 'base-char
+                          :fill-pointer 0 :adjustable t))
+        (hm (make-hash-table)))
+    (with-output-to-string (s fstr)
+      (setf (gethash "one" hm) 1)
+      (print-map hm s)
+      (is (string-equal "one: 1
+"
+                        fstr)))))
+
+;; set
+(test make-set
+  (is (equal '(3 2 1)
+             (make-set '(1 2 3 1 2)))))

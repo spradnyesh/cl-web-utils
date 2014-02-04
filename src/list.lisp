@@ -38,8 +38,8 @@
 (defun get-random-from-list (list)
   (nth (random (length list)) list))
 
-(defun group-list (fn list &key test 'equal)
-  (let ((ht (make-hash-table :test (or test 'equal)))
+(defun group-list (fn list &key (test #'equal))
+  (let ((ht (make-hash-table :test test))
         (key nil)
         (ele nil)
         (rslt nil))
@@ -116,18 +116,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; hashmap manipulation
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defun print-map (hm)
-  (maphash #'(lambda (k v) (format t "~a: ~a~%" k v))
+(defun print-map (hm &optional (stream t))
+  (maphash #'(lambda (k v) (format stream "~a: ~a~%" k v))
            hm))
-
-(defmacro push-key-hm (obj)
-  `(setf (gethash key hm) ,obj))
-
-(defun push-map (hm key ele)
-  (let ((obj (gethash key hm)))
-    (if obj
-        (push-key-hm (push ele obj))
-        (push-key-hm (list ele)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; set manipulation
