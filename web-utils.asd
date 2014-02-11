@@ -8,6 +8,7 @@
                         :components ((:file "package")
                                      (:file "threads" :depends-on ("package"))
                                      (:file "list" :depends-on ("package"))
+                                     (:file "memoize" :depends-on ("package"))
                                      (:file "macros" :depends-on ("package"))
                                      (:file "string" :depends-on ("list"))
                                      (:file "config" :depends-on ("string"))

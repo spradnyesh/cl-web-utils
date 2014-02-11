@@ -130,13 +130,18 @@
            :insert-inline-ads
            :remove-inline-ads
            ;; cron
-           :cron-restart))
+           :cron-restart
+           ;; memoize
+           :*mem-tables*
+           :memoize))
 
 (in-package :web-utils)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; global configs for use in this package
 ;; make sure these are initialized in every project
+
+;; they are defined here instead of in particular file because some are needed by multiple files
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar *home* "")
 ;; init
@@ -151,6 +156,7 @@
 (defvar *resources* (make-hash-table :test 'equal)) ; hashmap of all resources (eg db, etc) initialized during system-start
 ;; lang
 (defvar *translation-table* nil)
+
 
 ;; http://common-lisp.net/project/parenscript/tutorial.html
 (setf *js-string-delimiter* #\")
