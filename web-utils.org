@@ -1,11 +1,20 @@
 #+FILETAGS: :web-utils:
 
 * backlog
+** separate tests into different system
 ** TODO memoize
    :CLOCK:
+   CLOCK: [2014-02-13 Thu 17:07]--[2014-02-13 Thu 17:28] =>  0:21
+   CLOCK: [2014-02-13 Thu 16:28]--[2014-02-13 Thu 17:04] =>  0:36
+   CLOCK: [2014-02-13 Thu 16:12]--[2014-02-13 Thu 16:23] =>  0:11
    CLOCK: [2014-02-11 Tue 17:26]--[2014-02-11 Tue 17:31] =>  0:05
    CLOCK: [2014-02-11 Tue 16:43]--[2014-02-11 Tue 17:24] =>  0:41
    :END:
+   -
+(defun fib (n)
+  (if (< n 3)
+      1
+      (+ (fib (1- n)) (fib (- n 2)))))
 ** TODO write tests
    :CLOCK:
    CLOCK: [2014-02-04 Tue 16:16]--[2014-02-04 Tue 16:18] =>  0:02
@@ -21,7 +30,11 @@
    - rename to remove-duplicates
    - why is it needed in model/article/get-active-articles (the original list already does not contain duplicates)
    - and other places too? ???
-** replace utils/locale w/ cl-locale
+** TODO [bug] image-upload should convert transparent background to white
+   :CLOCK:
+   CLOCK: [2014-02-13 Thu 15:44]--[2014-02-13 Thu 16:11] =>  0:27
+   CLOCK: [2014-02-13 Thu 14:18]--[2014-02-13 Thu 15:11] =>  0:53
+   :END:
 ** Archive                                                          :ARCHIVE:
 *** DONE [bug] image resizing output is not good
     CLOSED: [2014-01-30 Thu 20:12]

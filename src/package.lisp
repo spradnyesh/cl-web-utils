@@ -132,8 +132,9 @@
            ;; cron
            :cron-restart
            ;; memoize
-           :*mem-tables*
-           :memoize))
+           :memoize
+           :un-memoize
+           :clr-memoize))
 
 (in-package :web-utils)
 
