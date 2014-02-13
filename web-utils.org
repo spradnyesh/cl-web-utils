@@ -1,19 +1,18 @@
 #+FILETAGS: :web-utils:
 
 * backlog
+** ensure *mem-map* does not conflict (is not overwritten) from different projects
+   - especially due to clr-memoize
+   - check for other web-utils global params too
 ** TODO memoize
    :CLOCK:
+   CLOCK: [2014-02-13 Thu 17:49]--[2014-02-13 Thu 18:14] =>  0:25
    CLOCK: [2014-02-13 Thu 17:07]--[2014-02-13 Thu 17:28] =>  0:21
    CLOCK: [2014-02-13 Thu 16:28]--[2014-02-13 Thu 17:04] =>  0:36
    CLOCK: [2014-02-13 Thu 16:12]--[2014-02-13 Thu 16:23] =>  0:11
    CLOCK: [2014-02-11 Tue 17:26]--[2014-02-11 Tue 17:31] =>  0:05
    CLOCK: [2014-02-11 Tue 16:43]--[2014-02-11 Tue 17:24] =>  0:41
    :END:
-   -
-(defun fib (n)
-  (if (< n 3)
-      1
-      (+ (fib (1- n)) (fib (- n 2)))))
 ** TODO write tests
    :CLOCK:
    CLOCK: [2014-02-04 Tue 16:16]--[2014-02-04 Tue 16:18] =>  0:02

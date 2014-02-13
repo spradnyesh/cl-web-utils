@@ -2,6 +2,8 @@
 
 (defvar *mem-map* (make-hash-table :test #'equal))
 
+;(defmacro with-memoization ())
+
 (defun memoize (fn &key (re-memoize nil))
   "memoize a function (fn), if not already memoized, or if re-memoize is t
 if re-memoize is nil and fn is already memoized then it will not memoize it again, but will return the already memoized version
@@ -22,7 +24,7 @@ NOTE: a beneficial side-effect of below implementation is that for self-recursiv
          (mem-fn (gethash key *mem-map*)))
     (if (or re-memoize
             (null mem-fn))
-        (let ((orig-fn (symbol-function fn)))
+        (let ((orig-fn (symbol-function fn))) ; http://stackoverflow.com/a/19375845
           (let* ((hm (make-hash-table :test 'equal))
                  (mem-fn (lambda (&rest args)
                            (let ((e (gethash args hm)))
@@ -51,8 +53,3 @@ NOTE: a beneficial side-effect of below implementation is that for self-recursiv
 
 (defun clr-memoize ()
   (clrhash *mem-map*))
-
-(defun fib (n)
-  (if (< n 3)
-      1
-      (+ (fib (1- n)) (fib (- n 2)))))
