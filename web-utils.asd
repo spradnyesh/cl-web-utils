@@ -31,9 +31,5 @@
                                      (:file "token-card" :depends-on ("package"))
                                      (:file "email" :depends-on ("threads"))
                                      (:file "google-ads" :depends-on ("package"))
-                                     (:file "cron" :depends-on ("package"))))
-               (:module "tests"
-                        :components ((:file "package")
-                                     (:file "list" :depends-on ("package")))
-                        :depends-on ("src")))
-  :depends-on (:sexml :cl-memcached :cl-ppcre :parenscript :restas :split-sequence :hunchentoot :cl-prevalence :cl-gd :ironclad :local-time :flexi-streams :trivial-utf-8 :cl-smtp :cl-json :trivial-timeout :eager-future2 :cl-cron :drakma :fiveam))
+                                     (:file "cron" :depends-on ("package")))))
+  :depends-on (:sexml :cl-memcached :cl-ppcre :parenscript :restas :split-sequence :hunchentoot :cl-prevalence :cl-gd :ironclad :local-time :flexi-streams :trivial-utf-8 :cl-smtp :cl-json :trivial-timeout :eager-future2 :cl-cron :drakma))

@@ -1,7 +1,6 @@
 #+FILETAGS: :web-utils:
 
 * backlog
-** separate tests into different system
 ** TODO memoize
    :CLOCK:
    CLOCK: [2014-02-13 Thu 17:07]--[2014-02-13 Thu 17:28] =>  0:21
@@ -40,4 +39,12 @@
     CLOSED: [2014-01-30 Thu 20:12]
     :PROPERTIES:
     :ARCHIVE_TIME: 2014-01-30 Thu 20:12
+    :END:
+*** DONE separate tests into different system
+    CLOSED: [2014-02-13 Thu 17:48]
+    :CLOCK:
+    CLOCK: [2014-02-13 Thu 17:42]--[2014-02-13 Thu 17:48] =>  0:06
+    :END:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2014-02-13 Thu 17:48
     :END:
