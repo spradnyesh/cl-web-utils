@@ -1,11 +1,16 @@
 (in-package :web-utils)
 
-(defvar *mem-map* (make-hash-table :test #'equal))
-
 (defmacro memoized-defun (fn (&rest args) &body body)
   `(progn (defun ,fn (,@args)
             ,@body)
-          (memoize ,fn)))
+          (memoize ',fn)))
+
+(defun init-memoize ()
+  (make-hash-table :test #'equal))
+
+(defmacro with-mem-map ((mem-map) &body body)
+  `(let ((*mem-map* ,mem-map))
+     ,@body))
 
 (defun memoize (fn &key (re-memoize nil))
   "memoize a function (fn), if not already memoized, or if re-memoize is t

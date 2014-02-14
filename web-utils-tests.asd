@@ -6,5 +6,6 @@
 (defsystem web-utils-tests
   :components ((:module "tests"
                         :components ((:file "package")
-                                     (:file "list" :depends-on ("package")))))
+                                     (:file "list" :depends-on ("package"))
+                                     (:file "memoize" :depends-on ("package")))))
   :depends-on (:web-utils :fiveam))

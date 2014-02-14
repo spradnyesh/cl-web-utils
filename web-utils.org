@@ -1,9 +1,6 @@
 #+FILETAGS: :web-utils:
 
 * backlog
-** ensure *mem-map* does not conflict (is not overwritten) from different projects
-   - especially due to clr-memoize
-   - check for other web-utils global params too
 ** TODO write tests
    :CLOCK:
    CLOCK: [2014-02-04 Tue 16:16]--[2014-02-04 Tue 16:18] =>  0:02
@@ -23,6 +20,10 @@
    :CLOCK:
    CLOCK: [2014-02-13 Thu 15:44]--[2014-02-13 Thu 16:11] =>  0:27
    CLOCK: [2014-02-13 Thu 14:18]--[2014-02-13 Thu 15:11] =>  0:53
+   :END:
+** TODO move from ./locale to cl-locale
+   :CLOCK:
+   CLOCK: [2014-02-14 Fri 13:21]--[2014-02-14 Fri 13:38] =>  0:17
    :END:
 ** Archive                                                          :ARCHIVE:
 *** DONE [bug] image resizing output is not good
@@ -52,3 +53,14 @@
     :PROPERTIES:
     :ARCHIVE_TIME: 2014-02-14 Fri 13:19
     :END:
+*** DONE ensure *mem-map* does not conflict (is not overwritten) from different projects
+    CLOSED: [2014-02-14 Fri 14:55]
+    :CLOCK:
+    CLOCK: [2014-02-14 Fri 14:45]--[2014-02-14 Fri 14:55] =>  0:10
+    CLOCK: [2014-02-14 Fri 13:35]--[2014-02-14 Fri 14:10] =>  0:35
+    :END:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2014-02-14 Fri 14:59
+    :END:
+    - especially due to clr-memoize
+    - check for other web-utils global params too

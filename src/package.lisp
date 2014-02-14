@@ -132,11 +132,12 @@
            ;; cron
            :cron-restart
            ;; memoize
+           :init-memoize
            :memoize
            :un-memoize
            :clr-memoize
            :memoized-defun
-           :*mem-map*))
+           :with-mem-map))
 
 (in-package :web-utils)
 
@@ -159,7 +160,8 @@
 (defvar *resources* (make-hash-table :test 'equal)) ; hashmap of all resources (eg db, etc) initialized during system-start
 ;; lang
 (defvar *translation-table* nil)
-
+;; memoize
+(defvar *mem-map* nil)
 
 ;; http://common-lisp.net/project/parenscript/tutorial.html
 (setf *js-string-delimiter* #\")
