@@ -42,3 +42,15 @@
   (clr-memoize)
   (memoize 'fib)
   (is (equal 'symbol (type-of (un-memoize 'fib)))))
+
+(test memoized-defun
+  (is (equal (macroexpand-1 '(memoized-defun fib (n)
+                              (if (< n 3)
+                                  1
+                                  (+ (fib (1- n)) (fib (- n 2))))))
+             '(PROGN
+               (DEFUN FIB (N)
+                 (IF (< N 3)
+                     1
+                     (+ (FIB (1- N)) (FIB (- N 2)))))
+               (MEMOIZE FIB)))))

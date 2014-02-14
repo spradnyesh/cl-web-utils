@@ -135,6 +135,7 @@
            :memoize
            :un-memoize
            :clr-memoize
+           :memoized-defun
            :*mem-map*))
 
 (in-package :web-utils)
