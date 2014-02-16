@@ -35,10 +35,6 @@
         collecting ,body into ,a
         finally (return (apply #'concatenate 'string ,a)))))
 
-;; http://stackoverflow.com/questions/211717/common-lisp-programmatic-keyword
-(defun make-keyword (name)
-  (values (intern (string-upcase name) "KEYWORD")))
-
 ;; prepend/append (based on 'direction) string of 'character
 ;; of length (- 'length (length 'string)) to given 'string
 (defun string-pad (string character length &optional (direction :l))
@@ -69,7 +65,8 @@
 
 (defun nil-or-empty (string)
   (when (or (null string)
-            (string-equal "" string))
+            (and (stringp string)
+                 (string-equal "" string)))
     t))
 
 (defun slugify (title)
@@ -86,8 +83,6 @@
      " ")
     "-")))
 
+;; duplicate functionality :(
 (defun is-null-or-empty (key)
-  (declare (inline))
-  (when (or (null key)
-            (string= key ""))
-    t))
+  (nil-or-empty key))

@@ -1,5 +1,8 @@
 (in-package :web-utils-tests)
 
+(def-suite :list :in :web-utils)
+(in-suite :list)
+
 ;; conditionally-accumulate
 (test conditionally-accumulate-t
   (is (equal '(2 4)

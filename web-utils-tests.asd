@@ -7,5 +7,7 @@
   :components ((:module "tests"
                         :components ((:file "package")
                                      (:file "list" :depends-on ("package"))
+                                     (:file "string" :depends-on ("package"))
+                                     (:file "file" :depends-on ("package"))
                                      (:file "memoize" :depends-on ("package")))))
   :depends-on (:web-utils :fiveam))

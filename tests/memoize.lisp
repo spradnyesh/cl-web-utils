@@ -1,5 +1,8 @@
 (in-package :web-utils-tests)
 
+(def-suite :memoize :in :web-utils)
+(in-suite :memoize)
+
 (defvar *mem-map* (init-memoize))
 
 (defun fib (n)
