@@ -15,6 +15,7 @@
            :h-genurl
            :h-gen-full-url
            :m-404
+           :def-route
            ;; dimensions
            :*resources*
            :init-dimensions

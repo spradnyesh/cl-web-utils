@@ -12,6 +12,14 @@
   `*session*)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; circumvent restas removing decorators from module definition level
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defmacro def-route (name (&rest template) &body body)
+  `(define-route ,name (,@template)
+     (:decorators #'web-utils:init-dimensions)
+     ,@body))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; start/stop/restart
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defmacro intern-system (form)
@@ -82,7 +90,7 @@
 (defun h-gen-full-url (&rest args)
   (declare (inline))
   (if (boundp '*request*)
-      (apply #'gen-full-url (if (parameter "d1m")
+      (apply #'genurl* (if (parameter "d1m")
                                 (append args (list :d1m (parameter "d1m")))
                                 args))
       "/"))
@@ -100,7 +108,7 @@
          (template (intern (string-upcase "template") package))
          (local-v-404 (intern (string-upcase "local-v-404") package)))
     `(progn
-       (define-route ,r-404 ("*any")
+       (def-route ,r-404 ("*any")
          (,v-404))
        (defun ,v-404 ()
          (if (fboundp ',local-v-404)
