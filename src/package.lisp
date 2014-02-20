@@ -68,6 +68,7 @@
            :db-disconnect
            :db-reconnect
            :get-db-handle
+           :db-execute
            ;; memcache
            :with-cache
            ;; list

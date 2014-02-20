@@ -72,6 +72,11 @@
 (defmacro get-object-by (cond list)
   `(conditionally-accumulate ,cond ,list))
 
+(defmacro db-execute (command &optional object)
+  `(if ,object
+       (execute (get-db-handle) (make-transaction ,command ,object))
+       (execute (get-db-handle) (make-transaction ,command))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; getters/setters
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
