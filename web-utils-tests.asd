@@ -10,6 +10,7 @@
                                      (:file "ckeditor" :depends-on ("package"))
                                      (:file "cron" :depends-on ("package"))
                                      (:file "datetime" :depends-on ("package"))
+                                     (:file "db" :depends-on ("package"))
                                      (:file "file" :depends-on ("package"))
                                      (:file "html" :depends-on ("package"))
                                      (:file "list" :depends-on ("package"))
