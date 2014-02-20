@@ -12,5 +12,6 @@
                                      (:file "html" :depends-on ("package"))
                                      (:file "cipher" :depends-on ("package"))
                                      (:file "ckeditor" :depends-on ("package"))
+                                     (:file "cron" :depends-on ("package"))
                                      (:file "memoize" :depends-on ("package")))))
   :depends-on (:web-utils :fiveam))
