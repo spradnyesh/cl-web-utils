@@ -139,7 +139,9 @@
            :un-memoize
            :clr-memoize
            :memoized-defun
-           :with-mem-map))
+           :with-mem-map
+           ;; secrets
+           :populate-config-from-secret))
 
 (in-package :web-utils)
 

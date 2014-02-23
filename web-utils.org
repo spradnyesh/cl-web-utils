@@ -3,6 +3,7 @@
 * backlog
 ** TODO write tests
    :CLOCK:
+   CLOCK: [2014-02-20 Thu 18:48]--[2014-02-20 Thu 19:30] =>  0:42
    CLOCK: [2014-02-20 Thu 18:14]--[2014-02-20 Thu 18:31] =>  0:17
    CLOCK: [2014-02-20 Thu 18:11]--[2014-02-20 Thu 18:13] =>  0:02
    CLOCK: [2014-02-20 Thu 18:07]--[2014-02-20 Thu 18:09] =>  0:02
@@ -75,3 +76,12 @@
     :END:
     - especially due to clr-memoize
     - check for other web-utils global params too
+*** DONE move golbin/common/secrets to web-utils
+    CLOSED: [2014-02-23 Sun 10:46]
+    :CLOCK:
+    CLOCK: [2014-02-23 Sun 10:45]--[2014-02-23 Sun 10:46] =>  0:01
+    CLOCK: [2014-02-23 Sun 09:57]--[2014-02-23 Sun 10:43] =>  0:46
+    :END:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2014-02-23 Sun 10:46
+    :END:
