@@ -33,10 +33,10 @@
 (defun set-resource (name value dim-str)
   (setf (gethash name (gethash dim-str *resources*)) value))
 
-(defun show-resources ()
+(defun show-resources (&optional (stream t))
   (maphash #'(lambda (k v)
-               (format t "***** ~a: *****~%" k)
-               (print-map v)) *resources*))
+               (format stream "***** ~a: *****~%" k)
+               (print-map v stream)) *resources*))
 
 (defun find-dimension-value (dim-name &optional dim-str)
   (dolist (dim (split-sequence "," dim-str :test #'string-equal))

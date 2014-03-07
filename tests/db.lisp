@@ -10,10 +10,6 @@
   (declare (ignore dim-str))
   key)
 
-(defun web-utils::get-resource (key dimension)
-  (declare (ignore dimension))
-  key)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;; tests
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -80,5 +76,6 @@
 
 ;; get-db-handle
 (test get-db-handle
-  (is (string-equal (get-db-handle)
-                    "db")))
+  (with-fixture resources ()
+      (is (string-equal (get-db-handle)
+                        "db-value"))))
