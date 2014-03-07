@@ -82,6 +82,7 @@
            :make-set
            :group-list
            :range
+           :flatten
            ;; string
            :slugify
            :join-string-list-with-delim

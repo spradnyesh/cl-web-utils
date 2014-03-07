@@ -76,6 +76,12 @@
   (is (equal '(1 1.5 2.0 2.5 3.0 3.5)
              (range 1 4 0.5))))
 
+;; flatten
+(test flatten
+  (is (equal (web-utils::flatten '(2 5 6 (4 (3 NIL)) NIL NIL))
+             '(NIL NIL 4 NIL 3 6 5 2))))
+
+
 ;; permutations and combinations
 (test combinations
   (is (equal '((3) (3 1) (3 2 1) (3 2) (2) (2 1) (1))

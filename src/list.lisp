@@ -63,6 +63,15 @@
       (range 0 start step)
       (loop for i from start below end by step collect i)))
 
+(defun flatten (list)
+  (let ((rslt nil))
+    (dolist (l list)
+      (if (atom l)
+          (push l rslt)
+          (dolist (f (flatten l))
+            (push f rslt))))))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; permutations, combinations and cross-products
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
